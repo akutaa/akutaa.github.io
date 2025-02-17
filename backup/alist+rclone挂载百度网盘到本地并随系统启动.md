@@ -11,7 +11,8 @@
 
 参考alist v3的[文档](https://alist.nn.ci/zh/guide/drivers/baidu.html)，挂载百度网盘即可。里面针对各种策略做了详细的解释。因为我是SVIP且希望尽量稳定，所以选择官方接口，WebDAV策略302重定向。需要注意的是，这里的挂载路径可以随意填写，作为挂载之后的根路径。如这里写的是“百度网盘”。
 
-![alt text](assets/image-13.png)
+![选择挂载路径2025-02-17](https://raw.githubusercontent.com/akutaa/img/main/img选择挂载路径2025-02-17.png?token=AOSM6UVXSMFF2I4MGAWP6OTHWLGN6)
+
 
 # 配置rclone
 
@@ -49,4 +50,4 @@ mount baidu:/ W: --cache-dir D:/Cache/ --vfs-cache-mode full --vfs-cache-max-siz
 
 完成后，应该就可以在系统服务管理界面看到这两个服务，可以暂停或设置自动启动。系统启动后会自动挂载。唯一的问题是不能显示已用空间，不过空间不吃紧的情况下问题不大。
 
-![alt text](assets/image-14.png)
+![显示已用空间2025-02-17](https://raw.githubusercontent.com/akutaa/img/main/img显示已用空间2025-02-17.png?token=AOSM6UVIJOQLW6PUPWSMZ6DHWLGQK)
