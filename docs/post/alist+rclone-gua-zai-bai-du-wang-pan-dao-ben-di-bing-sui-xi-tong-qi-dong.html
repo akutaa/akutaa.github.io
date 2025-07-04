@@ -91,7 +91,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>大部分内容参考了<a href="https://blog.csdn.net/qq_16747625/article/details/138796829" rel="nofollow">这个帖子</a>，但过程中也是踩了几个坑。</p>
 <h1>配置alist开启WebDAV</h1>
 <p>参考alist v3的<a href="https://alist.nn.ci/zh/guide/drivers/baidu.html" rel="nofollow">文档</a>，挂载百度网盘即可。里面针对各种策略做了详细的解释。因为我是SVIP且希望尽量稳定，所以选择官方接口，WebDAV策略302重定向。需要注意的是，这里的挂载路径可以随意填写，作为挂载之后的根路径。如这里写的是“百度网盘”。</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/akutaa/img/main/%E9%80%89%E6%8B%A9%E6%8C%82%E8%BD%BD2025-02-17.png"><img src="https://raw.githubusercontent.com/akutaa/img/main/%E9%80%89%E6%8B%A9%E6%8C%82%E8%BD%BD2025-02-17.png" alt="选择挂载2025-02-17" style="max-width: 100%;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/akutaa/img/main/%E9%80%89%E6%8B%A9%E6%8C%82%E8%BD%BD2025-02-17.png"><img src="https://raw.githubusercontent.com/akutaa/img/main/%E9%80%89%E6%8B%A9%E6%8C%82%E8%BD%BD2025-02-17.png" alt="选择挂载2025-02-17" style="max-width: 100%; height: auto;"></a></p>
 <h1>配置rclone</h1>
 <p><a href="https://github.com/rclone/rclone/releases">rclone</a>依赖<a href="https://github.com/winfsp/winfsp/releases">WinFsp</a>，可以事先安装。</p>
 <p>在rclone.exe所在路径下打开命令行，执行指令<code class="notranslate">rclone.exe config</code>。注意可能要使用<code class="notranslate">./rclone.exe config</code>的语法，注意命令行的提示。当然，也可以直接注册rclone为环境变量。前面的alist同理。</p>
@@ -111,7 +111,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>问题原因是被注册为system服务后，rclone会去system路径下找配置文件，然而没有权限。这似乎是因为我在使用nssm之前手动运行了<code class="notranslate">mount</code>命令，配置文件被放在了用户路径下。加了<code class="notranslate">config</code>参数指定之后就正常了。</p>
 <p>之后记得在<code class="notranslate">Dependencies</code>选项卡将前面注册的alist作为依赖。</p>
 <p>完成后，应该就可以在系统服务管理界面看到这两个服务，可以暂停或设置自动启动。系统启动后会自动挂载。唯一的问题是不能显示已用空间，不过空间不吃紧的情况下问题不大。</p>
-<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/akutaa/img/main/%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%94%A8%E7%A9%BA%E9%97%B42025-02-17.png"><img src="https://raw.githubusercontent.com/akutaa/img/main/%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%94%A8%E7%A9%BA%E9%97%B42025-02-17.png" alt="显示已用空间2025-02-17" style="max-width: 100%;"></a></p></div>
+<p><a target="_blank" rel="noopener noreferrer nofollow" href="https://raw.githubusercontent.com/akutaa/img/main/%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%94%A8%E7%A9%BA%E9%97%B42025-02-17.png"><img src="https://raw.githubusercontent.com/akutaa/img/main/%E6%98%BE%E7%A4%BA%E5%B7%B2%E7%94%A8%E7%A9%BA%E9%97%B42025-02-17.png" alt="显示已用空间2025-02-17" style="max-width: 100%; height: auto;"></a></p></div>
 <div style="font-size:small;margin-top:8px;float:right;">转载请注明出处</div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
